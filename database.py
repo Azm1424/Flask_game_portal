@@ -223,6 +223,7 @@ def update_avg_users_rating(avg_users_rating, id):
 # create_user_table()
 # create_reviews_table()
 # create_profiles_table()
+# del_game(33)
 
 # add_game('https://image.api.playstation.com/vulcan/ap/rnd/202302/2321/3098481c9164bb5f33069b37e49fba1a572ea3b89971ee7b.jpg', '''Baldur's Gate III''',
 #          '''Baldur's Gate III — ізометрична рольова відеогра, розроблена Larian Studios. Це третя основна гра в серії Baldur's Gate, заснована на настільній рольовій системі Dungeons & Dragons 5-го видання.''',
@@ -281,5 +282,50 @@ def update_avg_users_rating(avg_users_rating, id):
 #          8.8,
 #          'https://www.youtube.com/embed/5KdE0p2joJw?si=NYv0o6JR2P-DT3fr',
 #          'PC, PlayStation 4, Xbox, Nintendo Switch, Android, iOS',
+#          0
+#          )
+
+# add_game('https://gaming-cdn.com/images/products/1555/orig/cossacks-3-pc-game-steam-cover.jpg?v=1652361633',
+#          '''Cossacks 3''',
+#          '''«Козаки 3» — відеогра, ремейк стратегії в реальному часі «Козаки: Європейські війни» 2001 року,
+#           розроблена українською компанією GSC Game World для платформи Microsoft Windows.
+#          Видана 20 вересня 2016 року в сервісі цифрової дистрибуції Steam.''',
+#          'Стратегія в реальному часі, Бойовик, Adventure, Strategy',
+#          6.3,
+#          'https://www.youtube.com/embed/eKaRWNub9sw?si=WsA14oEQqoAsEwyZ',
+#          'PC',
+#          0
+#          )
+
+# add_game('https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fborderlands-2%2Fhome%2FEGS_Borderlands2_GearboxSoftware_S5-1360x766-8546dab7d7968b51fae34f402d61c1f9ea1b6891.jpg',
+#          '''Borderlands 2''',
+#          '''Borderlands 2 — комп'ютерна гра в жанрі шутера від першої особи з елементами RPG, продовження комп'ютерної гри Borderlands.
+#          Відрізняється від своєї попередниці поліпшеною системою модінгу зброї і більш продуманим сюжетом.''',
+#          'Шутер від першої особи, Hack and slash',
+#          8.9,
+#          'https://www.youtube.com/embed/9PlLwA_uVCw?si=7-o0MgzotiBJciXb',
+#          'PC, PlayStation 3/4, Xbox, Nintendo Switch, Android',
+#          0
+#          )
+
+# add_game('https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000016330/d94d2186ef03c930392253c83c84af0c73b7e57cd902a526b09b4155a25930fe',
+#          '''Cuphead''',
+#          '''Cuphead — відеогра жанрів «біжи і стріляй» і платформера, створена канадською компанією StudioMDHR Entertainment.
+#          Видана для Windows і Xbox One 29 вересня 2017 року, для macOS 19 жовтня 2019, та для Nintendo Switch 17 квітня 2019 року.''',
+#          "Інді-ігри, Платформер, Shoot 'em up, Beat 'em up, Run and gun",
+#          8.8,
+#          'https://www.youtube.com/embed/NN-9SQXoi50?si=Vaoxc8bT2dmdD9Pc',
+#          'PC, Xbox, Nintendo Switch',
+#          0
+#          )
+
+# add_game('https://i.ytimg.com/vi/4uP2MyUL49s/maxresdefault.jpg',
+#          '''Stray''',
+#          '''Stray — пригодницька відеогра 2022 року, розроблена BlueTwelve Studio і видана Annapurna Interactive.
+#          Випущена для Microsoft Windows, PlayStation 4 та PlayStation 5 19 липня 2022 року.''',
+#          "Пригодницька відеогра, Інді-ігри, Головоломка, Симулятор",
+#          8.3,
+#          'https://www.youtube.com/embed/4uP2MyUL49s?si=T2wwMi1MFlTswg9P',
+#          'PC, PlayStation 4/5, Xbox, Nintendo Switch',
 #          0
 #          )
