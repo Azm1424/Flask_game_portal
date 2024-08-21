@@ -272,3 +272,14 @@ def update_avg_users_rating(avg_users_rating, id):
 #          'PC',
 #          0
 #          )
+
+# add_game('https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000013704/918c0badde3aeba760e2185f382a2402248a1292322cf540fd8d098eeb292e1e',
+#          '''Civilization VI''',
+#          '''Sid Meier's Civilization VI — відеогра жанру глобальної покрокової стратегії із серії «Civilization» Сіда Меєра, розроблена компанією Firaxis Games.
+#          Випущена 2K Games 21 жовтня 2016 року, а в лютому наступного року відеогра була портована на Linux. Версія для Nintendo Switch вийшла 16 листопада 2018 року.''',
+#          'Покрокова стратегія, Глобальна стратегія, Strategy',
+#          8.8,
+#          'https://www.youtube.com/embed/5KdE0p2joJw?si=NYv0o6JR2P-DT3fr',
+#          'PC, PlayStation 4, Xbox, Nintendo Switch, Android, iOS',
+#          0
+#          )
