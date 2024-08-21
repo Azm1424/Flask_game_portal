@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% block title %}{{profile.1}}'s profile{% endblock %}
+
+{% block content %}
+    <h1 style="font-family: vineta bt; font-size: 2.4em; color: DeepSkyBlue;" class="center">Профіль: {{profile.1}}</h1>
+    <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 list-group-item-info" aria-current="true">
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          {% if profile.2 %}
+              <h5 class="mx-5 mb-0">✅ Ім'я</h5>
+              <p class="mx-5 mb-0 opacity-75">{{profile.2}}</p>
+          {% else %}
+            <h5 class="mx-5 mb-0">❌ Ім'я</h5>
+            <p class="mx-5 mb-0 opacity-75">Немає даних</p>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 list-group-item-info" aria-current="true">
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          {% if profile.3 %}
+              <h5 class="mx-5 mb-0">✅ Вік</h5>
+              <p class="mx-5 mb-0 opacity-75">{{profile.3}}</p>
+          {% else %}
+            <h5 class="mx-5 mb-0">❌ Вік</h5>
+            <p class="mx-5 mb-0 opacity-75">Немає даних</p>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 list-group-item-info" aria-current="true">
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          {% if profile.4 %}
+              <h5 class="mx-5 mb-0">✅ Країна</h5>
+              <p class="mx-5 mb-0 opacity-75">{{profile.4}}</p>
+          {% else %}
+            <h5 class="mx-5 mb-0">❌ Країна</h5>
+            <p class="mx-5 mb-0 opacity-75">Немає даних</p>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 list-group-item-info" aria-current="true">
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          {% if profile.5 %}
+              <h5 class="mx-5 mb-0">✅ Місто</h5>
+              <p class="mx-5 mb-0 opacity-75">{{profile.5}}</p>
+          {% else %}
+            <h5 class="mx-5 mb-0">❌ Місто</h5>
+            <p class="mx-5 mb-0 opacity-75">Немає даних</p>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 list-group-item-info" aria-current="true">
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          {% if profile.6 %}
+              <h5 class="mx-5 mb-0">✅ Контакти</h5>
+              <p class="mx-5 mb-0 opacity-75">{{profile.6}}</p>
+          {% else %}
+            <h5 class="mx-5 mb-0">❌ Контакти</h5>
+            <p class="mx-5 mb-0 opacity-75">Немає даних</p>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 list-group-item-info" aria-current="true">
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          {% if profile.7 %}
+              <h5 class="mx-5 mb-0">✅ Улюблена гра</h5>
+              <p class="mx-5 mb-0 opacity-75">{{profile.7}}</p>
+          {% else %}
+            <h5 class="mx-5 mb-0">❌ Улюблена гра</h5>
+            <p class="mx-5 mb-0 opacity-75">Немає даних</p>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+  </div><br>
+{% if session.username == profile.1 %}
+<div class="container">
+    <div class="row">
+        <div>
+            <div class="col-12">
+                <details> <summary style="margin:auto; display:block;" class="btn btn-secondary">Редагувати профіль</summary><br><br>
+                    <form method="post">
+                        <div class="form-group">
+                            {{ form.name.label }}
+                            {% if profile.2 %}
+                                {{ form.name(class='form-control', value=profile.2) }}
+                            {% else %}
+                                {{ form.name(class='form-control') }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.age.label }}
+                            {% if profile.3 %}
+                                {{ form.age(class='form-control', value=profile.3) }}
+                            {% else %}
+                                {{ form.age(class='form-control') }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.country.label }}
+                            {% if profile.4 %}
+                                {{ form.country(class='form-control', value=profile.4) }}
+                            {% else %}
+                                {{ form.country(class='form-control') }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.city.label }}
+                            {% if profile.5 %}
+                                {{ form.city(class='form-control', value=profile.5) }}
+                            {% else %}
+                                {{ form.city(class='form-control') }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.contacts.label }}
+                            {% if profile.6 %}
+                                {{ form.contacts(class='form-control', value=profile.6) }}
+                            {% else %}
+                                {{ form.contacts(class='form-control') }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.favourite_game.label }}
+                            {% if profile.7 %}
+                                {{ form.favourite_game(class='form-control', value=profile.7) }}
+                            {% else %}
+                                {{ form.favourite_game(class='form-control') }}
+                            {% endif %}
+                        </div><br>
+                        <div class="form-group">
+                            {{ form.submit(class='btn btn-success') }}
+                        </div>
+                    </form>
+                </details><br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+<h1 style="font-family: vineta bt; font-size: 2.4em; color: DeepSkyBlue;" class="center">Всі огляди користувача</h1>
+<div class="container">
+    <div class="row">
+        {% for i in range(0, games|length) %}
+        <div class="col-6">
+            <div class="card m-1 p-0">
+                <div class="card-header"><a href="{{url_for('inspection_of_the_game', id=games[i][0])}}"><p>{{games[i][1]}}</p></a> <h6 class="right">{{reviews[i][5]}}</h6></div>
+                <div class="card-title">
+                    {% if reviews[i][4] == 10 %}
+                    <div>
+                        <img class="mt-1 mx-1" src="/static/10.png" width="60px;" height="50px;">
+                    </div>
+                    {% elif reviews[i][4] >= 8 %}
+                    <div>
+                        <h4 class="mt-1 mx-1 py-2 px-3 text-white d-inline-block bg-success rounded-pill">{{reviews[i][4]}}</h4>
+                    </div>
+                    {% elif reviews[i][4] >= 5%}
+                    <div>
+                        <h4 class="mt-1 mx-1 py-2 px-3 text-white d-inline-block bg-warning rounded-pill">{{reviews[i][4]}}</h4>
+                    </div>
+                    {% else %}
+                    <div>
+                        <h4 class="mt-1 mx-1 py-2 px-3 text-white d-inline-block bg-danger rounded-pill">{{reviews[i][4]}}</h4>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    {% if reviews[i][3]|length <= 200 %}
+                    <p style="font-family: comic sans ms; font-size: 1.0em; color: DarkSlateGray;">{{reviews[i][3]}}</p>
+                    {% else %}
+                    <p style="font-family: comic sans ms; font-size: 1.0em; color: DarkSlateGray;">{{reviews[i][3]|truncate(100, True)}}</p>
+                    <details><summary class="btn btn-secondary">Більше</summary>
+                        <p style="font-family: comic sans ms; font-size: 1.0em; color: DarkSlateGray;">{{reviews[i][3]}}</p>
+                    </details>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

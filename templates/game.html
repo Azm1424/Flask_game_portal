@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}{{game[2]}}{% endblock %}
+
+{% block content %}
+<h1 class="m-3 center">{{game[2]}}</h1>
+<p class="m-3 center"><b>{{game[4]}}</b></p>
+<p class="m-3 center"><b>{{game[7]}}</b></p>
+<div class="container">
+    <div class="row">
+        <div>
+            <div class="col-9">
+                <img src="{{game[1]}}" width="600px;">
+                <p>{{game[3]}}</p>
+                <details> <summary class="btn btn-info text-white">Трейлер</summary><br><br> <iframe width='560' height='315' src={{game[6]}} title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe></details>
+                <p>Оцінка від експертів: {{game[5]}}</p>
+                {% if game[8] %}
+                    <p>Оцінка від користувачів: {{game[8]}}</p>
+                {% else %}
+                    <p>Оцінка від користувачів: N/a</p>
+                {% endif %}
+                {% if session.username %}
+                    <details> <summary class="btn btn-secondary">Огляд та оцінка гри</summary><br><br>
+                            <form method="post">
+                                <div class="form-group">
+                                    {{form.review.label}}
+                                    {{form.review(class='form-control', placeholder='Максимум 2000 символів')}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.rating.label}}
+                                    {{form.rating(class='form-select')}}
+                                </div><br>
+                                <div class="form-group">
+                                    {{form.submit(class='btn btn-success')}}
+                                </div>
+                            </form>
+                            <p style="font-size: 1.0em;">*Щоб оновити огляд та оцінку, відправте форму повторно</p>
+                    </details><br>
+                {% else %}
+                    <p>Щоб мати можливість написати огляд та оцінити гру, <a href="{{url_for('login')}}" type="button">увійдіть</a> в акаунт</p>
+                {% endif %}<br>
+                <div class="container">
+                    <div class="row">
+                        {% for i in reviews %}
+                            <div class="col-6">
+                                <div class="card m-1 p-0">
+                                    <div class="card-header"><a href="{{url_for('profile', username=i[2])}}"><p>{{i.2}}</p></a> <h6 class="right">{{i.5}}</h6></div>
+                                    <div class="card-title">
+                                        {% if i.4 == 10 %}
+                                            <div>
+                                                <img class="mt-1 mx-1" src="/static/10.png" width="60px;" height="50px;">
+                                            </div>
+                                        {% elif i.4 >= 8 %}
+                                            <div>
+                                                <h4 class="mt-1 mx-1 py-2 px-3 text-white d-inline-block bg-success rounded-pill">{{i.4}}</h4>
+                                            </div>
+                                        {% elif i.4 >= 5%}
+                                            <div>
+                                                <h4 class="mt-1 mx-1 py-2 px-3 text-white d-inline-block bg-warning rounded-pill">{{i.4}}</h4>
+                                            </div>
+                                        {% else %}
+                                            <div>
+                                                <h4 class="mt-1 mx-1 py-2 px-3 text-white d-inline-block bg-danger rounded-pill">{{i.4}}</h4>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="card-body">
+                                        {%if i.3|length <= 200%}
+                                            <p style="font-family: comic sans ms; font-size: 1.0em; color: DarkSlateGray;">{{i[3]}}</p>
+                                        {% else %}
+                                            <p style="font-family: comic sans ms; font-size: 1.0em; color: DarkSlateGray;">{{i[3]|truncate(100, True)}}</p>
+                                            <details><summary class="btn btn-secondary">Більше</summary>
+                                                <p style="font-family: comic sans ms; font-size: 1.0em; color: DarkSlateGray;">{{i[3]}}</p>
+                                            </details>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
